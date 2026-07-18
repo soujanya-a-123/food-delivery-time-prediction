@@ -28,6 +28,8 @@ This is a Machine Learning web application developed using **Python, Streamlit, 
    ```
    streamlit run app.py
    ```
+## 🚀 Live Demo
+https://xgb-food-delivery-predictor.streamlit.app/
 
 ## Developer
 **Soujanya**
