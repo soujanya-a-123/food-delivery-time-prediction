@@ -43,21 +43,14 @@ def calculate_distance(lat1, lon1, lat2, lon2):
 st.markdown("""
 <style>
 
-.stApp{
-    background:#F5F7FB;
-}
-
 /* Hide Streamlit Menu */
 #MainMenu{
-visibility:hidden;
 }
 
 footer{
-visibility:hidden;
 }
 
 header{
-visibility:hidden;
 }
 
 /* Title */
@@ -109,6 +102,23 @@ color:#1B5E20;
 </style>
 """, unsafe_allow_html=True)
 
+st.sidebar.title("⚙️ AI Workflow")
+
+st.sidebar.markdown("""
+📝 **Input Delivery Details**
+
+&nbsp;&nbsp;&nbsp;&nbsp;↓
+
+🤖 **XGBoost Prediction**
+
+&nbsp;&nbsp;&nbsp;&nbsp;↓
+
+🚚 **Estimated Delivery Time**
+
+&nbsp;&nbsp;&nbsp;&nbsp;↓
+
+📊 **Delivery Status**
+""", unsafe_allow_html=True)
 # -----------------------------
 # Title
 # -----------------------------
@@ -120,7 +130,7 @@ st.markdown(
         text-align:center;
         font-size:22px;
         font-weight:600;
-        color:#374151;
+        color:inherit;
         margin-bottom:25px;
     ">
         This AI-powered application predicts the estimated food delivery time
@@ -463,52 +473,53 @@ if predict:
 
         # -----------------------------
                 # -----------------------------
+        # -----------------------------
         # Result
         # -----------------------------
 
-        st.markdown("---")
+        #st.markdown("---")
 
-        col1, col2 = st.columns(2)
+        st.markdown(
+            f"""
+            <div style="
+                background:#4CAF50;
+                color:white;
+                padding:15px;
+                border-radius:5px;
+                font-size:18px;
+                font-weight:bold;
+                text-align:center;
+                margin-bottom:8px;
+            ">
+                <div style="font-size:24px; font-weight:bold;">🚚 Estimated Delivery Time</div>
+                <div style="font-size:24px; font-weight:bold;margin-top:8px;">{prediction:.2f} minutes</span>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
-        with col1:
+        #st.markdown("---")
+        st.markdown(
+            f"""
+            <div style="
+                background:#60A5FA;
+                color:white;
+                padding:12px;
+                border-radius:10px;
+                font-size:20px;
+                font-weight:bold;
+                text-align:center;
+                margin-bottom:8px;
+            ">
+                <div style="font-size:24px; font-weight:bold;">Distance</div>
+                <div style="font-size:24px; font-weight:bold;margin-top:8px;">{distance:.2f} km</span>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
-            st.markdown(
-                f"""
-                <div style="
-                    background:#16A34A;
-                    color:white;
-                    padding:20px;
-                    border-radius:12px;
-                    text-align:center;
-                    box-shadow:0px 3px 10px rgba(0,0,0,0.2);
-                ">
-                    <h4>🍔 Estimated Delivery Time</h4>
-                    <h2>{prediction:.2f} min</h2>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
-
-        with col2:
-
-            st.markdown(
-                f"""
-                <div style="
-                    background:#16A34A;
-                    color:white;
-                    padding:20px;
-                    border-radius:12px;
-                    text-align:center;
-                    box-shadow:0px 3px 10px rgba(0,0,0,0.2);
-                ">
-                    <h4>📍 Delivery Distance</h4>
-                    <h2>{distance:.2f} km</h2>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
-
-        st.markdown("")
+        
+        #st.markdown("")
 
         if prediction <= 20:
             msg = "🟢 Fast Delivery"
