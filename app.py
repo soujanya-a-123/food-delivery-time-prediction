@@ -168,8 +168,9 @@ with col1:
         min_value=18,
         max_value=60,
         value=None,
-        placeholder="15 – 50"
+        placeholder="18 – 60"
     )
+    
 
 with col2:
 
@@ -415,6 +416,8 @@ if predict:
             int(order_month),
             int(order_day)
         ).weekday()
+        
+        # ==========================
 
         # Encode categorical features
         weather = encoders["Weatherconditions"].transform([weather])[0]
