@@ -119,6 +119,15 @@ st.sidebar.markdown("""
 
 📊 **Delivery Status**
 """, unsafe_allow_html=True)
+
+st.sidebar.markdown("---")
+
+st.sidebar.subheader("📍 Coordinate Range")
+
+st.sidebar.write("🏪 Restaurant Latitude : -30.91 to 30.91")
+st.sidebar.write("🏪 Restaurant Longitude : -88.37 to 88.43")
+st.sidebar.write("🚚 Delivery Latitude : 0.01 to 31.05")
+st.sidebar.write("🚚 Delivery Longitude : 0.01 to 88.56")
 # -----------------------------
 # Title
 # -----------------------------
@@ -159,7 +168,7 @@ with col1:
         min_value=18,
         max_value=60,
         value=None,
-        placeholder="Enter Age"
+        placeholder="15 – 50"
     )
 
 with col2:
@@ -170,7 +179,7 @@ with col2:
         max_value=5.0,
         step=0.1,
         value=None,
-        placeholder="Enter Rating"
+        placeholder="1 – 5"
     )
 
 # ==========================================
@@ -191,7 +200,8 @@ with col1:
         value=None,
         step=0.000001,
         format="%.6f",
-        placeholder="Enter Restaurant Latitude"
+        placeholder="e.g. 12.971599",
+        help="Enter latitude (e.g. 12.971599)"
     )
 
     restaurant_long = st.number_input(
@@ -199,7 +209,8 @@ with col1:
         value=None,
         step=0.000001,
         format="%.6f",
-        placeholder="Enter Restaurant Longitude"
+        placeholder="e.g. 77.594566",
+        help="Enter longitude (e.g. 77.594566)"
     )
 
 with col2:
@@ -209,15 +220,15 @@ with col2:
         value=None,
         step=0.000001,
         format="%.6f",
-        placeholder="Enter Delivery Latitude"
-    )
+        placeholder="e.g. 12.935223",
+   )
 
     delivery_long = st.number_input(
         "**Delivery Longitude**",
         value=None,
         step=0.000001,
         format="%.6f",
-        placeholder="Enter Delivery Longitude"
+        placeholder="e.g. 77.624481"
     )
     # ==========================================
 # 📅 Order Details
@@ -237,7 +248,7 @@ with col1:
         min_value=1,
         max_value=31,
         value=None,
-        placeholder="Enter Day"
+        placeholder="1 - 31"
     )
 
     order_month = st.number_input(
@@ -245,7 +256,7 @@ with col1:
         min_value=1,
         max_value=12,
         value=None,
-        placeholder="Enter Month"
+        placeholder="1 - 12"
     )
 
 
@@ -256,7 +267,7 @@ with col2:
         min_value=0,
         max_value=23,
         value=None,
-        placeholder="0-23"
+        placeholder="0 - 23"
     )
 
     order_minute = st.number_input(
@@ -264,7 +275,7 @@ with col2:
         min_value=0,
         max_value=59,
         value=None,
-        placeholder="0-59"
+        placeholder="0 - 59"
     )
 
     pickup_hour = st.number_input(
@@ -272,7 +283,7 @@ with col2:
         min_value=0,
         max_value=23,
         value=None,
-        placeholder="0-23"
+        placeholder="0 - 23"
     )
 
     pickup_minute = st.number_input(
@@ -280,7 +291,7 @@ with col2:
         min_value=0,
         max_value=59,
         value=None,
-        placeholder="0-59"
+        placeholder="0 - 59"
     )
 
 
@@ -340,7 +351,7 @@ with col2:
         min_value=0,
         max_value=3,
         value=None,
-        placeholder="0-3"
+        placeholder="0 - 3"
     )
 
     festival = st.selectbox(
