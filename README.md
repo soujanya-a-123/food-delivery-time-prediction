@@ -114,15 +114,6 @@ streamlit run app.py
 
 ---
 
-## 👩‍💻 Developer
-
-**Soujanya A**
-
-Machine Learning Project
-
-Built with ❤️ using **Python • Streamlit • XGBoost**
-- Joblib
-
 ## How to Run
 
 1. Install the required libraries:
