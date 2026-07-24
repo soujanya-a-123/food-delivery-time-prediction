@@ -28,32 +28,6 @@ An AI-powered web application that predicts the estimated food delivery time usi
 
 ---
 
-## 📊 Input Features
-
-- Delivery Person Age
-- Delivery Person Rating
-- Restaurant Latitude
-- Restaurant Longitude
-- Delivery Latitude
-- Delivery Longitude
-- Weather Conditions
-- Road Traffic Density
-- Vehicle Condition
-- Type of Order
-- Type of Vehicle
-- Multiple Deliveries
-- Festival
-- City
-- Order Day
-- Order Month
-- Order Weekday (Auto Calculated)
-- Order Hour
-- Order Minute
-- Pickup Hour
-- Pickup Minute
-
----
-
 ## 🤖 Machine Learning Model
 
 **Model Used:** XGBoost Regressor
