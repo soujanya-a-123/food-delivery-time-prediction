@@ -4,16 +4,6 @@ An AI-powered web application that predicts the estimated food delivery time usi
 
 ---
 
-## 🌐 Live Demo
-
-🚀 **Try the application here:**
-
-**https://xgb-food-delivery-predictor.streamlit.app/**
-
-> Replace the above link with your deployed Streamlit app URL.
-
----
-
 ## ✨ Features
 
 - 🚚 Predict food delivery time
